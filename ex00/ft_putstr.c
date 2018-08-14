@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/09 19:17:35 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/09 19:26:23 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/11 23:36:55 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/21 16:32:05 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_putchar(char c);
 
-void	ft_print_alphabet(void)
+void	ft_putstr(char *str)
 {
-	int	ch;
+	int i;
 
-	ch = 'a';
-	while (ch <= 'z')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		ft_putchar(ch);
-		ch++;
+		ft_putchar(str[i]);
+		i++;
 	}
 }

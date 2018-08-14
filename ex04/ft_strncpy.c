@@ -1,54 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/07 19:54:23 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/09 14:17:15 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/16 00:14:41 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/21 23:43:08 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_putchar(char c);
 
-void	ft_print(char a, char b, char c)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	ft_putchar(a);
-	ft_putchar(b);
-	ft_putchar(c);
-	if (!(a == '7' && b == '8' && c == '9'))
-	{
-		ft_putchar(',');
-		ft_putchar(' ');
-	}
-}
+	unsigned int i;
 
-void	ft_print_comb(void)
-{
-	char a;
-	char b;
-	char c;
-
-	a = '0';
-	b = '1';
-	c = '2';
-	while (a <= '9')
+	i = 0;
+	while ((src[i] != '\0') && i < n)
 	{
-		while (b <= '9')
-		{
-			while (c <= '9')
-			{
-				if (a != b && b != c && c != a)
-				{
-					ft_print(a, b, c);
-				}
-				c++;
-			}
-			b++;
-			c = b;
-		}
-		a++;
-		b = a;
+		dest[i] = src[i];
+		i++;
 	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zbennett <zbennett@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 17:19:49 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/09 14:30:18 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/17 06:19:40 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/18 11:01:15 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_print_numbers(void)
+int		is_lower(char c)
 {
-	int	num;
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	return (0);
+}
 
-	num = '0';
-	while (num <= '9')
+int		ft_str_is_lowercase(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		ft_putchar(num);
-		num++;
+		if (!(is_lower(str[i])))
+			return (0);
+		i++;
 	}
+	return (1);
 }
