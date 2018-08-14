@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <zbennett@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/17 04:49:55 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/18 10:59:48 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/17 22:01:37 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/21 16:18:34 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		is_alpha(char c)
-{
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
-}
+#include <unistd.h>
 
-int		ft_str_is_alpha(char *str)
+void	ft_putchar(char c);
+
+int		main(int argc, char *argv[])
 {
 	int i;
+	int j;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = 1;
+	j = 0;
+	while (i < argc)
 	{
-		if (!(is_alpha(str[i])))
-			return (0);
+		while (argv[i][j])
+		{
+			ft_putchar(argv[i][j]);
+			j++;
+		}
+		ft_putchar('\n');
+		j = 0;
 		i++;
 	}
-	return (1);
+	return (0);
 }

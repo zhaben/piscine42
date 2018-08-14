@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <zbennett@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/17 07:28:27 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/18 11:11:07 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/17 09:29:14 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/17 09:30:24 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int j;
+#include <unistd.h>
 
-	j = 0;
-	while (src[j] != '\0')
-	{
-		if (j < size - 1)
-			dest[j] = src[j];
-		j++;
-	}
-	dest[j] = '\0';
-	return (j);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }

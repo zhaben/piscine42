@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <zbennett@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/17 06:19:40 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/18 11:01:15 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/17 23:27:00 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/21 18:17:54 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		is_lower(char c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
-}
+#include <unistd.h>
 
-int		ft_str_is_lowercase(char *str)
+void	ft_putchar(char c);
+
+int		main(int argc, char *argv[])
 {
 	int i;
+	int j;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = argc - 1;
+	while (i > 0)
 	{
-		if (!(is_lower(str[i])))
-			return (0);
-		i++;
+		j = 0;
+		while (argv[i][j])
+		{
+			ft_putchar(argv[i][j]);
+			j++;
+		}
+		i--;
+		ft_putchar('\n');
 	}
-	return (1);
+	return (0);
 }

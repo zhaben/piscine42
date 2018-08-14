@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <zbennett@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/17 07:02:00 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/18 11:03:57 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/17 10:02:00 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/23 03:51:17 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, int nb)
-{
-	int len;
-	int j;
+#include <unistd.h>
 
-	len = 0;
-	j = 0;
-	while (dest[len])
-		len++;
-	while (src[j] != '\0' && j < nb)
+void	ft_putchar(char c);
+
+int		main(int argc, char *argv[])
+{
+	int i;
+
+	(void)argc;
+	i = 0;
+	while (argv[0][i])
 	{
-		dest[len] = src[j];
-		len++;
-		j++;
+		ft_putchar(argv[0][i]);
+		i++;
 	}
-	dest[len] = '\0';
-	return (dest);
+	ft_putchar('\n');
+	return (0);
 }
