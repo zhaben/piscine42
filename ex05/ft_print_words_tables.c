@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <zbennett@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/17 07:02:00 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/18 11:03:57 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/26 19:27:07 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/26 19:27:53 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, int nb)
+void	ft_putchar(char c);
+
+void	ft_print_words_tables(char **tab)
 {
-	int len;
+	int i;
 	int j;
 
-	len = 0;
-	j = 0;
-	while (dest[len])
-		len++;
-	while (src[j] != '\0' && j < nb)
+	i = 0;
+	while (tab[i])
 	{
-		dest[len] = src[j];
-		len++;
-		j++;
+		i = 0;
+		while (tab[i][j])
+		{
+			ft_putchar(tab[i][j]);
+			j++;
+		}
+		i++;
+		ft_putchar('\n');
 	}
-	dest[len] = '\0';
-	return (dest);
 }

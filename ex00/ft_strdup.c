@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <zbennett@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/17 06:19:40 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/18 11:01:15 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/23 04:01:41 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/23 04:14:49 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		is_lower(char c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
-}
+#include <stdlib.h>
+#include <stdio.h>
 
-int		ft_str_is_lowercase(char *str)
+char	*ft_strdup(char *src)
 {
-	int i;
+	int		len;
+	char	*dest;
+	int		i;
 
 	i = 0;
-	while (str[i] != '\0')
+	len = 0;
+	while (src[len] != '\0')
+		len++;
+	dest = (char*)malloc(sizeof(char) * (len + 1));
+	while (src[i])
 	{
-		if (!(is_lower(str[i])))
-			return (0);
+		dest[i] = src[i];
 		i++;
 	}
-	return (1);
+	return (dest);
+}
+
+int		main(int argc, char *argv[])
+{
+	char *src;
+
+	src = argv[1];
+	if (argc == 2)
+		printf("Result: %s", ft_strdup(src));
+	return (0);
 }
