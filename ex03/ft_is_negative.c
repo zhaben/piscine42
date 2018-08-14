@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/10 13:22:19 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/10 16:35:11 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/04 17:19:49 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/09 14:22:59 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_fibonacci(int index)
+void	ft_putchar(char c);
+
+void	ft_is_negative(int n)
 {
-	if (index < 0)
-		return (-1);
-	else if (index == 0)
-		return (0);
-	else if (index == 1)
-		return (1);
+	if (n >= 0)
+	{
+		ft_putchar('P');
+	}
 	else
-		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	{
+		ft_putchar('N');
+	}
 }

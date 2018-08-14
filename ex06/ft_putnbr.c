@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/07 17:19:26 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/10 21:00:18 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/08 16:19:22 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/09 19:46:20 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+void	ft_putchar(char c);
 
-int		ft_recursive_power(int nb, int power)
+void	ft_putnbr(int nb)
 {
-	int factorial;
-
-	if (power == 0)
-		return (1);
-	if (nb == 0)
-		factorial = 1;
-	else if (nb > 0)
-		factorial = nb * ft_recursive_power(nb, power - 1);
-	else
-		return (0);
-	return (factorial);
-}
-
-int		main(void)
-{
-	int nb;
-
-	nb = ft_recursive_power(5, 3);
-	printf("%d", nb);
-	return (0);
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		nb = 147483648;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putchar(nb % 10 + '0');
+	}
+	if (nb <= 9)
+	{
+		ft_putchar(nb % 10 + '0');
+	}
 }

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/10 13:22:19 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/10 16:35:11 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/09 19:17:35 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/09 19:26:23 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_fibonacci(int index)
+void	ft_putchar(char c);
+
+void	ft_print_alphabet(void)
 {
-	if (index < 0)
-		return (-1);
-	else if (index == 0)
-		return (0);
-	else if (index == 1)
-		return (1);
-	else
-		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	int	ch;
+
+	ch = 'a';
+	while (ch <= 'z')
+	{
+		ft_putchar(ch);
+		ch++;
+	}
 }

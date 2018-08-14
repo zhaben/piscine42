@@ -1,44 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/07 19:01:44 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/11 13:36:57 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/04 17:19:49 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/09 19:26:05 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+void	ft_putchar(char c);
 
-int		ft_iterative_power(int nb, int power)
+void	ft_print_reverse_alphabet(void)
 {
-	int answr;
-	int i;
-	
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	if (nb == 0)
-		return (0);
-	i = 1;
-	answr = nb;
-	
-	while (i < power)
+	int	ch;
+
+	ch = 'z';
+	while (ch >= 'a')
 	{
-		answr *= nb;
-		i++;
+		ft_putchar(ch);
+		ch--;
 	}
-	return (answr);
-}
-
-int		main(void)
-{
-	int l;
-
-	l = ft_iterative_power(5, 2);
-	printf("%i\n", l);
-	return (0);
 }
