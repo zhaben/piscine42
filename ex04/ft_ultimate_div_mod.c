@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/09 19:17:35 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/09 19:26:23 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/11 21:02:26 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/14 15:55:05 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int	ch;
+	int tmp;
 
-	ch = 'a';
-	while (ch <= 'z')
-	{
-		ft_putchar(ch);
-		ch++;
-	}
+	tmp = *a;
+	*a = *a / *b;
+	*b = tmp % *b;
 }

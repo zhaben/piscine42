@@ -1,25 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 17:19:49 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/09 14:30:18 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/11 20:49:35 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/12 23:50:10 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_print_numbers(void)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	int	num;
-
-	num = '0';
-	while (num <= '9')
-	{
-		ft_putchar(num);
-		num++;
-	}
+	*div = a / b;
+	*mod = a % b;
 }

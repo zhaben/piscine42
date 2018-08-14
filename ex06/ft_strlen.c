@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 17:19:49 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/09 14:22:59 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/11 14:03:45 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/11 22:22:05 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_is_negative(int n)
+int		ft_strlen(char *str)
 {
-	if (n >= 0)
+	int i;
+	int count;
+
+	i = 0;
+	count = 0;
+	while (str[i] != '\0')
 	{
-		ft_putchar('P');
+		i++;
+		count++;
 	}
-	else
-	{
-		ft_putchar('N');
-	}
+	return (count);
 }

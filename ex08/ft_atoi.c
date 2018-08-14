@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 17:19:49 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/09 19:26:05 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/12 23:49:04 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/13 23:17:48 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_print_reverse_alphabet(void)
+int		ft_atoi(char *str)
 {
-	int	ch;
+	int i;
+	int pos;
+	int num;
 
-	ch = 'z';
-	while (ch >= 'a')
+	i = 0;
+	pos = 1;
+	num = 0;
+	while ((str[i] == ' ') || (str[i] == '\t') || (str[i] == '\n') ||
+			(str[i] == '\r') || (str[i] == '\v') || (str[i] == '\f'))
+		i++;
+	if (str[i] == '-')
+		pos = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		ft_putchar(ch);
-		ch--;
+		num = num * 10 + (str[i] - '0');
+		i++;
 	}
+	return (pos * num);
 }

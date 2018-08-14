@@ -1,37 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/08 16:19:22 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/09 19:46:20 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/06 16:40:11 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/11 20:47:37 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putnbr(int nb)
+void		ft_ultimate_ft(int *********nbr)
 {
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar(nb % 10 + '0');
-	}
-	if (nb <= 9)
-	{
-		ft_putchar(nb % 10 + '0');
-	}
+	*********nbr = 42;
 }
