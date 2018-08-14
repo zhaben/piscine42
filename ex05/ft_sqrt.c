@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbennett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/08 16:19:22 by zbennett          #+#    #+#             */
-/*   Updated: 2018/07/09 19:46:20 by zbennett         ###   ########.fr       */
+/*   Created: 2018/07/10 17:48:36 by zbennett          #+#    #+#             */
+/*   Updated: 2018/07/10 18:47:13 by zbennett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putnbr(int nb)
+int		ft_sqrt(int nb)
 {
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
-	}
+	int		sqrt;
+
 	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar(nb % 10 + '0');
-	}
-	if (nb <= 9)
-	{
-		ft_putchar(nb % 10 + '0');
-	}
+		return (0);
+	sqrt = 0;
+	while (sqrt * sqrt < nb)
+		sqrt++;
+	if (sqrt * sqrt == nb)
+		return (sqrt);
+	return (0);
 }
